@@ -7,7 +7,6 @@ const request = require("request");
 
 //APP CONFIG
 mongoose.connect("mongodb://localhost:27017/moviedatabaseREST", { useNewUrlParser: true });
-// mongoose.connect("mongodb://restmovie1:restmovie1@ds143971.mlab.com:43971/moviedatabase", { useNewUrlParser: true });
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.json());  
