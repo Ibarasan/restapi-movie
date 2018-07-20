@@ -1,0 +1,43 @@
+<% include ../partials/header %>
+
+
+<div class="container text-center">
+
+
+<h1>Add a comment to the movie</h1>
+<form action="/comments" method="POST">
+    <div class="form-group">
+        <input class="form-control" type="text" placeholder="Title" name="movieTitle" required>
+    </div>
+    <div class="form-group">
+        <input class="form-control" type="text" placeholder="comment text body" name="commentText" required>
+    </div>
+    <input class="btn btn-primary" type="submit">
+</form>
+
+<hr>
+
+
+<h1>See comments for a specific movie</h1>
+<form action="/comments" method="GET">
+    <div class="form-group">
+        <input class="form-control" type="text" placeholder="Title" name="filtered" required>
+    </div>
+    <input class="btn btn-primary" type="submit">
+</form>
+
+
+<hr>
+
+
+<% movies.forEach((movie)=> { %>
+    <div class="border m-2 p-2">
+        <h1><%=movie.title %></h1> 
+        <%movie.comments.forEach((comment)=> {%>
+            <p><%= comment.text %></p>
+        <% })%>
+    </div>
+<% });%>
+
+</div>
+<% include ../partials/footer %>

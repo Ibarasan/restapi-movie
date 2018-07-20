@@ -1,0 +1,22 @@
+<% include ../partials/header %>
+<div class="container text-center">
+    
+<h1>Add movie to database</h1>
+
+<form action="/movies" method="POST">
+    <div class="form-group">
+        <input class="form-control" type="text" placeholder="Movie title" name="movie" required>
+    </div>
+    <input class="btn btn-primary" type="submit" value="Send">
+</form>
+
+<hr>
+<h1>Movies in database</h1>
+<% movies.forEach((movie)=> { %>
+    <div>
+        <li><%=movie.title%></li>
+    </div>
+<% });%>
+</div>
+
+<% include ../partials/footer %>
